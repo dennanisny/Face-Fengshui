@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Face Fengshui</string>
+    <string name="action_settings">Settings</string>
+
+    <color name="blue">#87CEFA</color>
+
+    <string name="title_main">Face Fengshui</string>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <string name="btn_start_text">Start</string>
+
+    <color name="GhostWhite">#F8F8FF</color>
+    <color name="btn_text_color">#4169E1</color>
+
+    <string name="title_activity_pick_photo">Pick a Photo</string>
+    <string name="title_activity_take_photo">Take a Photo</string>
+    <string name="btn_pick_photo">Pick Photo</string>
+    <string name="btn_detect">Detect</string>
+    <string name="txt_view_default">You can either take a new photo, or pick a photo from Gallery to perform face fengshui.</string>
+    <string name="txt_view_face_detect_time_label">Face detection time</string>
+    <string name="btn_take_photo">Take Photo</string>
+    <string name="txt_view_take_photo">Take a Photo</string>
+    <string name="title_activity_start_up">StartUpActivity</string>
+    <string name="txt_gender">Gender</string>
+    <string name="txt_age">Age</string>
+    <string name="txt_ethnic">Ethnicity</string>
+    <string name="txt_male">Male</string>
+    <string name="txt_female">Female</string>
+    <string name="txt_occupation">Occupation</string>
+
+    <string-array name="strarray_ethnic">
+        <item>Chinese</item>
+        <item>Malay</item>
+        <item>Indian</item>
+        <item>Caucasian</item>
+        <item>Others</item>
+    </string-array>
+
+    <string name="txt_startup">Please help us know you better by providing some information about you</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_submit">Submit</string>
+    <string name="txt_result_instruction">Below are your Face Fengshui results</string>
+
+    <string-array name="strarray_resulttype">
+        <item>Tolerance</item>
+        <item>Generosity</item>
+        <item>Health</item>
+        <item>Career</item>
+        <item>Learning Pattern</item>
+    </string-array>
+
+    <string name="txt_resultDefault">Your results will be displayed here</string>
+    <string name="btn_get_result">Result</string>
+    <string name="txt_ethnic_prompt">Choose an ethnicity</string>
+    <string name="btn_accredition">Accredition</string>
+    <string name="title_activity_accredition">AccreditionActivity</string>
+    <string name="txt_accredition">NTU School of Electrical and Electronic Engineering
+
+2013-14 Prof Peter Chong Han Joo / Yu Haiyang</string>
+
+</resources>

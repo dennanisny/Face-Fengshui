@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.facefengshui"
+        minSdkVersion 21
+        targetSdkVersion 25
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    buildTypes.each {
+        it.buildConfigField 'String', 'FACEPP_API_KEY', FaceppApiKey
+        it.buildConfigField 'String', 'FACEPP_API_SECRET', FaceppApiSecret
+    }
+    compileOptions {
+        targetCompatibility 1.7
+        sourceCompatibility 1.7
+    }
+}
+
+dependencies {
+    compile "com.android.support:support-core-utils:25.3.1"
+    compile files('libs/libGoogleAnalyticsServices.jar')
+    compile files('libs/FaceppSDK.jar')
+    compile files('libs/org.json.jar')
+}

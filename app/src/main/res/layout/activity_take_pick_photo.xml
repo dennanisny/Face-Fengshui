@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/blue"
+    tools:context=".TakePickPhotoActivity" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:background="@color/GhostWhite"
+        android:src="@drawable/launcher" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnTakePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/btn_take_photo"
+            android:textColor="@color/btn_text_color"
+            android:onClick="onClickTakePhoto"/>
+
+        <Button
+            android:id="@+id/btnPickPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/btnTakePhoto"
+            android:text="@string/btn_pick_photo"
+            android:textColor="@color/btn_text_color"
+            android:onClick="onClickPickPhoto"/>
+
+        <Button
+            android:id="@+id/btnDetect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/btnTakePhoto"
+            android:text="@string/btn_detect"
+            android:textColor="@color/btn_text_color" />
+
+        <Button
+            android:id="@+id/btnResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/btnPickPhoto"
+            android:layout_below="@+id/btnDetect"
+            android:text="@string/btn_get_result"
+            android:textColor="@color/btn_text_color"
+            android:onClick="onClickResult" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/txtViewStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:textSize="@dimen/textview_default_text_size"
+            android:text="@string/txt_view_default"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtViewStatus"
+            android:text="@string/txt_view_face_detect_time_label"
+            android:textSize="@dimen/textview_default_text_size"/>
+
+        <TextView
+            android:id="@+id/txtViewFaceDetectTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/txtViewStatus"
+            android:textSize="@dimen/textview_default_text_size"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.facefengshui"
+    android:versionCode="2"
+    android:versionName="Second Version" >
+
+    <!-- Accessing camera hardware -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.facefengshui.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <activity
+            android:name="com.facefengshui.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facefengshui.TakePickPhotoActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.facefengshui.StartUpActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.facefengshui.LogoActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.facefengshui.ResultActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.facefengshui.AccreditionActivity"
+            android:label="@string/app_name" >
+        </activity>
+    </application>
+
+</manifest>
