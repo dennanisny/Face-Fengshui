@@ -284,7 +284,7 @@ public class TakePickPhotoActivity extends Activity {
 						//show the image
 						imageView.setImageBitmap(img);
 						txtViewStatus.setText("Analysis complete. Click Result to discover yourself!");
-						txtViewFaceDetectTime.setText(faceDetectTime + "s");
+						txtViewFaceDetectTime.setText(faceDetectTime + "ms");
 						btnResult.setVisibility(View.VISIBLE);
 					}
 				});
@@ -297,7 +297,6 @@ public class TakePickPhotoActivity extends Activity {
 					}
 				});
 			}
-
 		}
 	};
 	/**
