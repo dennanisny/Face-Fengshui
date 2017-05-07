@@ -20,8 +20,9 @@
     <string name="title_activity_take_photo">Take a Photo</string>
     <string name="btn_pick_photo">Pick Photo</string>
     <string name="btn_detect">Detect</string>
-    <string name="txt_view_default">You can either take a new photo, or pick a photo from Gallery to perform face fengshui.</string>
+    <string name="txt_view_default">Please take/pick a photo first. Internet connection is required.</string>
     <string name="txt_view_face_detect_time_label">Face detection time</string>
+    <string name="txt_view_total_time_label">Total time</string>
     <string name="btn_take_photo">Take Photo</string>
     <string name="txt_view_take_photo">Take a Photo</string>
     <string name="title_activity_start_up">StartUpActivity</string>

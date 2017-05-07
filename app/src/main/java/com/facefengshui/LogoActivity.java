@@ -20,7 +20,7 @@ public class LogoActivity extends Activity {
 		new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                final Intent mainIntent = new Intent(LogoActivity.this, StartUpActivity.class);
+                final Intent mainIntent = new Intent(LogoActivity.this, MainActivity.class);
                 LogoActivity.this.startActivity(mainIntent);
                 LogoActivity.this.finish();
             }
@@ -30,7 +30,7 @@ public class LogoActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.logo, menu);
+		getMenuInflater().inflate(R.menu.setting, menu);
 		return true;
 	}
 	

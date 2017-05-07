@@ -46,21 +46,23 @@
             android:id="@+id/btnDetect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_alignBottom="@+id/btnTakePhoto"
+            android:layout_alignParentStart="true"
             android:text="@string/btn_detect"
-            android:textColor="@color/btn_text_color" />
+            android:textColor="@color/btn_text_color"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/btnResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_alignBottom="@+id/btnPickPhoto"
+            android:layout_alignParentStart="true"
             android:layout_below="@+id/btnDetect"
+            android:onClick="onClickResult"
             android:text="@string/btn_get_result"
             android:textColor="@color/btn_text_color"
-            android:onClick="onClickResult" />
+            android:visibility="invisible" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -79,6 +81,7 @@
             android:text="@string/txt_view_default"/>
 
         <TextView
+            android:id="@+id/txtViewFaceDetectTimeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -92,6 +95,22 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/txtViewStatus"
+            android:textSize="@dimen/textview_default_text_size"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtViewFaceDetectTimeLabel"
+            android:text="@string/txt_view_total_time_label"
+            android:textSize="@dimen/textview_default_text_size"/>
+
+        <TextView
+            android:id="@+id/txtViewTotalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/txtViewFaceDetectTime"
             android:textSize="@dimen/textview_default_text_size"/>
 
     </RelativeLayout>

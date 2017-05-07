@@ -12,47 +12,29 @@ class FaceFengshuiResult implements Serializable {
 	}
 
 	void setEyeDistance(double eyeDistance) {
-		if (eyeDistance > 50) {
-			results.put("Tolerance", "Open-minded");
+		if (eyeDistance > 48) {
+			results.put("Tolerance", "Open-minded: Your eye distance to face width ratio is more than 48%");
 		}
 		else {
-			results.put("Tolerance", "Detail-oriented");
+			results.put("Tolerance", "Detail-oriented: Your eye distance to face width ratio is no more than 48%");
 		}
 	}
 	
 	void setMouthSize(double mouthSize) {
-		if (mouthSize > 40) {
-			results.put("Generosity", "Generous");
+		if (mouthSize > 45) {
+			results.put("Generosity", "Generous: Your mouth size to face width ratio is more than 45%.");
 		}
 		else {
-			results.put("Generosity", "Purposeful");
+			results.put("Generosity", "Purposeful: Your mouth size to face width ratio is no more than 45%.");
 		}
 	}
 	
-	void setPhiltrum(double philtrum) {
-		if (philtrum > 25) {
-			results.put("Health", "Good");
+	void setPhiltrumLength(double philtrumLength) {
+		if (philtrumLength > 8) {
+			results.put("Health", "Good: Your philtrum length to face height ratio is more than 8%.");
 		}
 		else {
-			results.put("Health", "Decent");
-		}
-	}
-	
-	void setChinWidth(double chinWidth) {
-		if (chinWidth > 20) {
-			results.put("Career", "Career-focused");
-		}
-		else {
-			results.put("Career", "Family-focused");
-		}
-	}
-	
-	void setForeheadSize(double foreheadSize) {
-		if (foreheadSize > 25) {
-			results.put("Learning Pattern", "Traditional");
-		}
-		else {
-			results.put("Learning Pattern", "Experience-oriented");
+			results.put("Health", "Decent: Your philtrum length to face height ratio is no more than 8%.");
 		}
 	}
 }
