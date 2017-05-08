@@ -21,7 +21,7 @@
         android:textSize="32sp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/facefengshuilogo"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_below="@+id/txtViewResultInstruction"
@@ -31,13 +31,11 @@
         android:src="@drawable/launcher" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/facepluspluslogo"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageView1"
-        android:layout_marginTop="20dp"
-        android:scaleType="centerInside"
+        android:layout_alignParentBottom="true"
         android:src="@drawable/faceplusplus" />
 
 </RelativeLayout>

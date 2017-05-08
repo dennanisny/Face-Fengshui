@@ -19,6 +19,7 @@ android {
     buildTypes.each {
         it.buildConfigField 'String', 'FACEPP_API_KEY', FaceppApiKey
         it.buildConfigField 'String', 'FACEPP_API_SECRET', FaceppApiSecret
+        it.buildConfigField 'String', 'IDENTITY_POOL_ID', IdentityPoolId
     }
     compileOptions {
         targetCompatibility 1.7
@@ -33,6 +34,9 @@ android {
 
 dependencies {
     compile 'com.android.support:support-core-utils:25.3.1'
+    compile 'com.amazonaws:aws-android-sdk-core:2.2.+'
+    compile 'com.amazonaws:aws-android-sdk-ddb:2.2.+'
+    compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.2.+'
     compile files('libs/libGoogleAnalyticsServices.jar')
     compile files('libs/FaceppSDK.jar')
     compile files('libs/org.json.jar')

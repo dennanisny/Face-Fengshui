@@ -39,6 +39,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.*;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.*;
+import com.amazonaws.regions.Region;
+
 public class TakePickPhotoActivity extends Activity {
 	private final String TAG = "TakePickPhotoActivity";
 
@@ -62,6 +68,10 @@ public class TakePickPhotoActivity extends Activity {
 	TextView txtViewTotalTime;
 
 	ProgressDialog dialog;
+
+	CognitoCachingCredentialsProvider credentialsProvider;
+	AmazonDynamoDBClient ddbClient;
+	DynamoDBMapper mapper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +125,16 @@ public class TakePickPhotoActivity extends Activity {
 		dialog.setMessage("Face detection in progress...");
 
 		dialog.setCancelable(false);
+
+		// Setup Dynamo DB client for saving Face Fengshui results to cloud
+		credentialsProvider = new CognitoCachingCredentialsProvider(
+				getApplicationContext(),    /* get the context for the application */
+				BuildConfig.IDENTITY_POOL_ID,    /* Identity Pool ID */
+				Regions.AP_NORTHEAST_1           /* Region for your identity pool--US_EAST_1 or EU_WEST_1*/
+		);
+		ddbClient = new AmazonDynamoDBClient(credentialsProvider);
+		ddbClient.setRegion(Region.getRegion(Regions.AP_SOUTHEAST_1)); // Dynamo DB is set to Region Singapore
+		mapper = new DynamoDBMapper(ddbClient);
 	}
 
 	@Override
@@ -332,6 +352,27 @@ public class TakePickPhotoActivity extends Activity {
 				final double eyeDistanceRatio = eyeDistance/faceWidthAtEyeLevel * 100;
 				final double mouthSizeRatio = mouthSize/faceWidthAtMouthLevel * 100;
 				final double philtrumLengthRatio = philtrumLength/height * 100;
+
+				// Save Face Fengshui result to database
+				Runnable runnable = new Runnable() {
+					public void run() {
+						try {
+							// Save Face Fengshui result to AWS Dynamo DB
+							FaceFengshuiResultItem resultItem = new FaceFengshuiResultItem();
+							String result_id = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss.SSS z").format(new Date());
+							resultItem.setResultId(result_id);
+							resultItem.setEyeDistanceRatio(eyeDistanceRatio);
+							resultItem.setMouthSizeRatio(mouthSizeRatio);
+							resultItem.setPhiltrumLengthRatio(philtrumLengthRatio);
+
+							mapper.save(resultItem);
+						} catch (Exception e) {
+							Log.e(TAG, MessageFormat.format("Failed to save Face Fengshui result due to: \n {0}", e.getMessage()));
+						}
+					}
+				};
+				Thread saveFaceFengshuiResults = new Thread(runnable);
+				saveFaceFengshuiResults.start();
 
 				// Populate Face Fengshui results
 				faceFengshuiResult = new FaceFengshuiResult();
