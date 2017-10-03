@@ -1,9 +1,10 @@
-package com.facefengshui;
+package com.facefengshui.two;
 
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.util.Log;
 
+import com.facefengshui.two.BuildConfig;
 import com.megvii.cloud.http.CommonOperate;
 import com.megvii.cloud.http.Response;
 

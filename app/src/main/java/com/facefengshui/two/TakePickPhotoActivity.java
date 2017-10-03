@@ -1,4 +1,4 @@
-package com.facefengshui;
+package com.facefengshui.two;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -23,8 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facefengshui.FaceppDetect.DetectCallback;
-import com.facefengshui.FaceppDetect.ErrorCallback;
+import com.facefengshui.two.BuildConfig;
+import com.facefengshui.two.R;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import org.json.JSONException;
@@ -176,7 +176,7 @@ public class TakePickPhotoActivity extends Activity {
 
 			photoUri = FileProvider.getUriForFile(
 					getApplicationContext(),
-					"com.facefengshui.fileprovider",
+					"com.facefengshui.two.fileprovider",
 					photoFile
 			);
 			Log.d(TAG, "Uri to photo created: " + photoUri.getPath());
@@ -240,7 +240,7 @@ public class TakePickPhotoActivity extends Activity {
 		}
 	}
 
-	ErrorCallback errorCallback = new ErrorCallback() {
+	FaceppDetect.ErrorCallback errorCallback = new FaceppDetect.ErrorCallback() {
 		@Override
 		public void UpdateErrorMessageInUI(final Exception e) {
 			dialog.dismiss();
@@ -266,7 +266,7 @@ public class TakePickPhotoActivity extends Activity {
 		}
 	};
 
-	DetectCallback detectCallback = new DetectCallback() {
+	FaceppDetect.DetectCallback detectCallback = new FaceppDetect.DetectCallback() {
 		public void PaintResult(JSONObject obj, float scale) throws JSONException {
 			dialog.dismiss();
 

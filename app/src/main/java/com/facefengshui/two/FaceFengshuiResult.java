@@ -1,4 +1,4 @@
-package com.facefengshui;
+package com.facefengshui.two;
 
 import java.io.Serializable;
 import java.util.Hashtable;

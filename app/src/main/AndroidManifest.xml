@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.facefengshui"
+    package="com.facefengshui.two"
     android:versionCode="1"
     android:versionName="First Version" >
 
@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme" >
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.facefengshui.fileprovider"
+            android:authorities="com.facefengshui.two.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -27,7 +27,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
         <activity
-            android:name="com.facefengshui.LogoActivity"
+            android:name="com.facefengshui.two.LogoActivity"
             android:label="@string/app_name" >
             <intent-filter android:label="@string/app_name" >
                 <action android:name="android.intent.action.MAIN" />
@@ -35,20 +35,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.facefengshui.MainActivity"
+            android:name="com.facefengshui.two.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.facefengshui.TakePickPhotoActivity"
+            android:name="com.facefengshui.two.TakePickPhotoActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.facefengshui.ResultActivity"
+            android:name="com.facefengshui.two.ResultActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.facefengshui.AccreditionActivity"
+            android:name="com.facefengshui.two.AccreditionActivity"
             android:label="@string/app_name" >
         </activity>
     </application>

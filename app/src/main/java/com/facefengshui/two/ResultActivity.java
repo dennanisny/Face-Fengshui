@@ -1,5 +1,6 @@
-package com.facefengshui;
+package com.facefengshui.two;
 
+import com.facefengshui.two.R;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import android.database.MatrixCursor;

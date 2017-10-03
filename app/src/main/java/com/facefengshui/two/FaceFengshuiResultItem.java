@@ -1,4 +1,4 @@
-package com.facefengshui;
+package com.facefengshui.two;
 
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.*;
 
